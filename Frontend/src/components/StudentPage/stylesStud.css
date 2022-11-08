@@ -76,6 +76,10 @@ body {
     list-style: none;
 }
 
+.maincol1 li {
+    margin-bottom: 10px;
+}
+
 .maincol2 {
     flex: 80%;
     padding: 50px;
