@@ -416,6 +416,19 @@ app.post('/api/coach/create_coach', async(req, res) => {
 
 //===================
 
+//Team Funcitonality
+app.post('/api/team/get_team', async(req, res) => {
+  const { teamID } = req.body;
+  const team = await Team.findOne({"national_id": teamID});
+  if(!team){
+    return res.sendStatus(404)
+  } else {
+    return res.status(200).send(team);
+  }
+  
+})
+//=================
+
 //Assessment Functionality
 
 app.post('/api/assessment/add_assessment', async(req, res) => {
