@@ -9,6 +9,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import * as React from "react";
 import {useEffect} from 'react';
 
+import AppTest from '../AppTest/AppTest';
 
 function App() {
 
@@ -17,7 +18,9 @@ function App() {
   }, []);
 
   return (
+
     <div className="App">
+      <AppTest />
       <Routes>
         <Route path="*" element={<NotFound/>} />
         <Route path="about" element={<About/>} />
