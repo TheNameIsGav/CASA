@@ -1,18 +1,19 @@
-const mongoose = require ('mongoose');
+const mongoose = require('mongoose');
 
 
-//Schema - how our data is going to be
+// Schema
 const Schema = mongoose.Schema;
-const BlogPostSchema = new Schema ({
-  title: String,
-  body:String,
-  date: {
-    type: String,
-    default: Date.now()
-  }
+const BlogPostSchema = new Schema({
+    title: String,
+    body: String,
+    date: {
+        type: String,
+        default: Date.now()
+    }
 });
 
-//Model
+// Model
 const BlogPost = mongoose.model('BlogPost', BlogPostSchema);
 
-module.exports = BlogPost; 
+module.exports =  BlogPost;
+

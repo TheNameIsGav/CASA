@@ -30,8 +30,8 @@ let password = environment.USER_PASSWORD
 
 //store routes
 
-const routes = require ('../routes/api');
-app.use ('/api', routes);
+const routes = require('../routes/api');
+app.use('/api', routes);
 
 // Database Setup and Verification Steps
     const uri = "mongodb+srv://" + username + ":" + password + "@casa-primary.mfffrek.mongodb.net/" + database + "?retryWrites=true&w=majority"
