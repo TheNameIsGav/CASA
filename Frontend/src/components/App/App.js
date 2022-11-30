@@ -4,14 +4,15 @@ import About from "../About/About";
 import DevPage from "../DevPage/DevPage";
 import CreateUser from "../CreateUser/CreateUser";
 import NotFound from "../NotFound/NotFound";
+
 // eslint-disable-next-line
 import { Routes, Route, Link } from "react-router-dom";
 import * as React from "react";
 import {useEffect} from 'react';
+import Profile from '../Profile/Profile.js';
 
-import AppTest from "../AppTest/AppTest";
-
-
+//import Profile from
+//Routes, Route, Link
 function App() {
 
   useEffect(() => {
@@ -20,15 +21,11 @@ function App() {
 
   return (
     <div className="App">
-    
-      <AppTest/>
-      <Routes>
-        <Route path="*" element={<NotFound/>} />
-        <Route path="about" element={<About/>} />
-        <Route path="dev" element={<DevPage/>} />
-        <Route path="createuser" element={<CreateUser/>} />
-        <Route path="login" element={<Login/>} />
-      </Routes>
+      <Profile />
+
+      
+
+        
     </div>
   );
 }

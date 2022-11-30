@@ -6,7 +6,6 @@ const BlogPost = require('../models/blogPost');
 const User = require('../Database/User')
 // Routes
 router.get('/', (req, res) => {
-
     BlogPost.find({  })
         .then((data) => {
             console.log('Data: ', data);
@@ -36,11 +35,12 @@ router.post('/save', (req, res) => {
 
 
 router.get('/name', (req, res) => {
-    const data =  {
-        username: 'peterson',
-        age: 5
-    };
-    res.json(data);
+    const testCoach = {
+        username: "test coach",
+        password: "test_coach_password",
+    }
+    res.json(testCoach);
+
 });
 
 

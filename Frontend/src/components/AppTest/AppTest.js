@@ -15,7 +15,7 @@ class App extends React.Component {
 
 
   getBlogPost = () => {
-    axios.get('/api')
+    axios.get('/api/name')
       .then((response) => {
         const data = response.data;
         this.setState({ posts: data });
