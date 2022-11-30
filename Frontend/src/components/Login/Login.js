@@ -46,10 +46,16 @@ function Login() {
   const fetchUserAccount = (e, incText) => {
     e.preventDefault()
 
-    var modText = incText.substring(1, incText.length-1)
+    var postData = { id: incText}
+
+      const requestOptions = {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json',
+          body: JSON.stringify(postData)
+    };
 
 
-    fetch('/api/user/display_user/' + modText).then(
+    fetch('/api/user/display_user/', requestOptions).then(
         res => res.text()).then(text => {
             try {
                 const userVal = JSON.parse(text)
