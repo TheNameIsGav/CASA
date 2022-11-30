@@ -50,7 +50,7 @@ function Login() {
 
       const requestOptions = {
           method: 'POST',
-          headers: {'Content-Type': 'application/json',
+          headers: {'Content-Type': 'application/json'},
           body: JSON.stringify(postData)
     };
 
@@ -59,7 +59,16 @@ function Login() {
         res => res.text()).then(text => {
             try {
                 const userVal = JSON.parse(text)
-                navigate('/about', {replace: true, state:{userVal}})
+                console.log(" ")
+                if (userVal.usertype === 'Student'){
+                    //navigate('/about', {replace: true, state:{userVal}})
+                }
+                if (userVal.usertype === 'Mentor'){
+                    //navigate('/about', {replace: true, state:{userVal}})
+                }
+                if (userVal.usertype === 'Coach'){
+                    navigate('/profile', {replace: true, state:{userVal}})
+                }
             } catch (error) {
                 
             }

@@ -21,10 +21,15 @@ function App() {
 
   return (
     <div className="App">
-      <Profile />
+      <Routes>
+        <Route path="*" element={<NotFound/>} />
+        <Route path="about" element={<About/>} />
+        <Route path="dev" element={<DevPage/>} />
+        <Route path="createuser" element={<CreateUser/>} />
+        <Route path="login" element={<Login/>} />
+        <Route path="profile" element={<Profile/>} />
 
-      
-
+      </Routes>
         
     </div>
   );
