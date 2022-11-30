@@ -13,7 +13,7 @@ class AppTest extends React.Component {
     }
 
     getBlogPost = () => {
-        axios.get('/api')
+        axios.get('http://localhost:3001/api')
             .then((response) => {
                 const data = response.data; 
                 this.setState({posts: data});
