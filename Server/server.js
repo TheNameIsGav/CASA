@@ -17,10 +17,21 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cors())
 
+app.use(express.json());
+//app.use(express.urlencoded({extended: false}));
+
 let environment = process.env
 let database = environment.DATABASE || "devops";
 let username = environment.USER_NAME
 let password = environment.USER_PASSWORD
+
+
+
+
+//store routes
+
+const routes = require ('../routes/api');
+app.use ('/api', routes);
 
 // Database Setup and Verification Steps
     const uri = "mongodb+srv://" + username + ":" + password + "@casa-primary.mfffrek.mongodb.net/" + database + "?retryWrites=true&w=majority"
@@ -54,6 +65,7 @@ let password = environment.USER_PASSWORD
 app.get("/api", (req, res) => {
     res.status(202).send("ok");
 });
+
 
 saltRounds = 12
 //User related functions
@@ -415,6 +427,19 @@ app.post('/api/coach/create_coach', async(req, res) => {
   });
 
 //===================
+
+//Team Funcitonality
+app.post('/api/team/get_team', async(req, res) => {
+  const { teamID } = req.body;
+  const team = await Team.findOne({"national_id": teamID});
+  if(!team){
+    return res.sendStatus(404)
+  } else {
+    return res.status(200).send(team);
+  }
+  
+})
+//=================
 
 //Assessment Functionality
 
